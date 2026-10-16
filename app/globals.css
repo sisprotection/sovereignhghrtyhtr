@@ -1,0 +1,49 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@theme inline {
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+  --font-display: 'Arial Narrow', Arial, sans-serif;
+}
+
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #0a0a0a; font-family: Arial, Helvetica, sans-serif; }
+button { cursor: pointer; }
+
+.font-display { font-family: var(--font-display); }
+.eyebrow { color: #766f62; font-family: var(--font-mono); font-size: 9px; letter-spacing: .16em; line-height: 1.2; }
+.section-title { margin-top: 5px; color: #eee5d2; font-family: var(--font-display); font-size: 17px; letter-spacing: .06em; }
+.brand-seal { display: flex; width: 34px; height: 34px; align-items: center; justify-content: center; border: 1px solid #b98b31; color: #d3a544; background: #17130b; }
+.icon-button { position: relative; display: flex; height: 34px; width: 34px; align-items: center; justify-content: center; border: 1px solid #332a1c; color: #a49a86; background: #13120f; }
+.icon-button svg { width: 15px; }
+.avatar { display: flex; height: 30px; width: 30px; align-items: center; justify-content: center; border: 1px solid #8a672b; background: #2d2412; color: #dfb253; font-family: var(--font-mono); font-size: 10px; }
+.notification-dot { position: absolute; right: 6px; top: 6px; height: 4px; width: 4px; border-radius: 50%; background: #d8a53e; }
+.nav-item { display: flex; align-items: center; gap: 12px; border: 1px solid transparent; padding: 11px 12px; color: #817969; font-size: 11px; text-align: left; }
+.nav-item:hover, .nav-item-active { border-color: #3d301c; color: #d8b05d; background: #1a160e; }
+.outline-button, .gold-button { display: inline-flex; align-items: center; gap: 8px; border: 1px solid #5a4725; padding: 9px 12px; font-family: var(--font-mono); font-size: 10px; letter-spacing: .04em; }
+.outline-button { color: #b8ad97; background: #11110f; }
+.outline-button:hover { border-color: #b88b34; color: #e0b454; }
+.gold-button { border-color: #d1a23f; color: #1a1408; background: #d4a640; }
+.gold-button:hover { background: #e0b653; }
+.metric-cell { padding: 14px 16px; background: #13120f; }
+.facility-card { border: 1px solid #342b1c; background: #14130f; padding: 15px; transition: border-color .15s, background .15s; }
+.facility-card:hover, .facility-active { border-color: #b38730; background: #19150d; }
+.status-mark { display: inline-flex; align-items: center; gap: 5px; font-family: var(--font-mono); font-size: 8px; letter-spacing: .1em; }
+.status-online { color: #9bb29d; }.status-watch { color: #d3a044; }.status-offline { color: #be6f62; }
+.integrity-bar { height: 3px; background: #292319; }.integrity-bar span { display: block; height: 100%; width: 98.7%; background: #b98c32; }
+.view-button { padding: 6px 8px; color: #776e5e; }.view-selected { color: #dcae4d; background: #302514; }
+.search-box { display: flex; align-items: center; gap: 7px; border: 1px solid #3b301e; padding: 8px 10px; color: #94783c; background: #11110f; }
+.search-box input { width: 130px; outline: 0; background: transparent; color: #d8cfbe; font-family: var(--font-mono); font-size: 10px; }.search-box input::placeholder { color: #655e51; }
+table thead { background: #17140e; }.table-status, th { font-family: var(--font-mono); font-size: 9px; letter-spacing: .08em; }th { padding: 11px 14px; color: #776f61; font-weight: 400; text-transform: uppercase; }td { border-top: 1px solid #292319; padding: 13px 14px; }.row-selected { background: #1b170e; }.row-selected td:first-child { box-shadow: inset 2px 0 #d3a342; }
+.table-status { border: 1px solid #46533d; padding: 4px 6px; color: #a7bc99; }.status-docked { border-color: #7d632c; color: #d5a849; }.status-in-review { border-color: #6b5a2d; color: #c8a35a; }.status-hold { border-color: #714037; color: #c27c68; }
+.signal-panel { border: 1px solid #342b1c; background: #14130f; padding: 16px; }.signal-bar { flex: 1; min-width: 2px; background: #b88b31; opacity: .75; }.signal-bar:nth-child(3n) { opacity: .42; }
+@media (max-width: 640px) { .gold-button, .outline-button { padding: 8px; font-size: 9px; } .gold-button svg, .outline-button svg { display: none; } }
+
+@layer base { * { border-color: #2d271c; } }
+
+@keyframes pulse { 50% { opacity: .6; } }
+.status-online svg { animation: pulse 2s ease-in-out infinite; }
+
